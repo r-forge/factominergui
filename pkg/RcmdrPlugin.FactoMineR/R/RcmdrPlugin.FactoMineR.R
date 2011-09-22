@@ -5933,9 +5933,12 @@ FactoGPA<-function()
       name.group<-c(name.group, listQuantiAct.nom)
       for(i in 1:nb.GQA) {
         eval(parse(text=paste("liste.var.GQA<-", listQuantiAct.nom[i], ".var", sep="")))
-        group<-c(group, length(liste.var.GQA)-1)
         type<-c(type,liste.var.GQA[1])
-        variables<-c(variables, liste.var.GQA[-1])
+## modif 7 juin
+##        variables<-c(variables, liste.var.GQA[-1])
+##        group<-c(group, length(liste.var.GQA)-1)
+        group<-c(group, length(liste.var.GQA))
+        variables<-c(variables, liste.var.GQA)
         indice.grpe<-indice.grpe+1
       }
     }
